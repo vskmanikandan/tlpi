@@ -1,0 +1,37 @@
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+#ifndef BUF_SIZE 
+#define BUF_SIZE 1024
+#endif
+
+int main()
+{
+  int open_fd, openFlags;
+  mode_t filePerms ;
+  ssize_t numRead;
+  char str[BUF_SIZE];
+  
+ // filePerms = 0644;
+  //openFlags = O_RDONLY;
+
+  open_fd = open( "data.txt", 0644 );
+  if( open_fd == -1 )
+  {
+    perror("Error Opening File !!");
+    exit(-1);
+  }
+
+  numRead = read( open_fd, str, BUF_SIZE );
+  int i;
+  for(i=0; i<numRead; i++)
+  printf("%c",str[i]);
+
+
+
+}

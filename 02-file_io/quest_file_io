@@ -1,0 +1,11 @@
+1. write a pgm for copy command
+2. filter eg display user info from /etc/passwd file
+3. Implement your own tail (Read last n lines of a huge file)
+4. Write a file in reverse using lseek() system call
+
+	  FILE A             File B should be
+	|---------|        |----------|
+	|ABCDEF   |        |FEDCBA    |
+	|---------|        |----------|
+5. Write pgm for append data from file-1 to file-2
+6. cat command
